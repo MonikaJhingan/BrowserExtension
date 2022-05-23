@@ -1,7 +1,8 @@
 # Fresh Start
 
 
-![FreshStart](public\favicon.jpg)
+![favicon (4)](https://user-images.githubusercontent.com/67049170/169794245-66e03dcc-c649-42ea-ab22-b9cd6519bf65.jpg)
+
 
 
 # Table of Contents
