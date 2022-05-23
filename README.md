@@ -1,7 +1,7 @@
 # Fresh Start
 
 
-![name-of-you-image](public\favicon.jpg)
+![FreshStart](public\favicon.jpg)
 
 
 # Table of Contents
