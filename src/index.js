@@ -1,14 +1,14 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import "./index.css";
-import App from "./App";
-import { makeServer } from "./server";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
+import { BrowserProvider } from './contexts';
 
-// Call make Server
-makeServer();
-ReactDOM.render(
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
   <React.StrictMode>
+  <BrowserProvider>
     <App />
-  </React.StrictMode>,
-  document.getElementById("root")
+    </BrowserProvider>
+  </React.StrictMode>
 );
