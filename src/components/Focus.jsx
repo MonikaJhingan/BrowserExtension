@@ -7,6 +7,7 @@ export const Focus = () => {
     browserDispatch,
   } = useBrowser();
 
+  const today = new Date().toLocaleDateString();
   const [mainFocus, setMainFocus] = useState(null);
   const [focusCompleted, setFocusCompleted] = useState(false);
 
