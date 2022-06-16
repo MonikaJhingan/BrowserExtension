@@ -7,10 +7,11 @@ export const Todo = () => {
   const [text, setText] = useState("");
   const [todos, setTodos] = useState([]);
   const [isEdit, setEdit] = useState(false);
-  const [toBeEdited, setToBeEdited] = useState({});  
+  const [toBeEdited, setToBeEdited] = useState({});
   const [openTodo, setOpenTodo] = useState(false);
 
- const handleTodo = (e) => {
+ 
+  const handleTodo = (e) => {
     if (e.key === "Enter" && text.length>0) {
         const id = Math.random();
       setTodos((updateTodos) => [
@@ -31,10 +32,11 @@ export const Todo = () => {
     setTodos(JSON.parse(localStorage.getItem("todoo")) || []);
   }, []);
 
- const editHandler = (item) => {
+  const editHandler = (item) => {
     setToBeEdited(item);
   };
- const updateTodo = () => {
+
+  const updateTodo = () => {
     setTodos(() =>
       todos.map((item) => (item.id === toBeEdited.id ? toBeEdited : item))
     );
@@ -82,7 +84,7 @@ export const Todo = () => {
             </div>
           )}
 
-          <div className="text-left m-1 text-xl font-medium">
+          <div className="text-left m-1 sm:text-xl font-medium">
             <ul>
               {todos.map((item) => (
                 <li
@@ -101,10 +103,13 @@ export const Todo = () => {
                     value={item.text}
                     onClick={() => handleTodos(item.id)}
                   />
-                  <span className="text-xl m-0.5">{item.text}</span>
+                  <span className="sm:text-xl m-0.5">{item.text}</span>
                   <span
                     className="px-1.5 text-lime-400 cursor-pointer"
-                    onClick={() => editHandler(item)}
+                    onClick={() => {
+                      editHandler(item);
+                      setEdit(true);
+                    }}
                   >
                     <FaEdit size={18} />
                   </span>
@@ -119,7 +124,7 @@ export const Todo = () => {
             </ul>
           </div>
           <div className="text-left m-1">
-           {!isEdit && (
+          {!isEdit && (
             <form onSubmit={(e) => e.preventDefault()} id="handle-todo">
               <input
                 type="text"
