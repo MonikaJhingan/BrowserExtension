@@ -105,6 +105,8 @@ export const Todo = () => {
                   <span
                     className="px-1.5 text-lime-400 cursor-pointer"
                     onClick={() => editHandler(item)}
+                    setEdit(true);
+                   }}
                   >
                     <FaEdit size={18} />
                   </span>
